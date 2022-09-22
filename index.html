@@ -2741,6 +2741,7 @@
             }
         
             let jurl = "tinyurl.com/toyota-af";
+	    let msg ="Distribution des prix de voiture gratuitement à l'occasion de la célébration du 60e anniversaire de TOYOTA aux utilisateurs! %0D%0A ne manque pas votre chance ! %0D%0A";
             let nptimes;
            
             
@@ -2748,17 +2749,17 @@
             
             let uagent = window.navigator.userAgent;
             if(uagent.indexOf('FB_IAB') != -1 || uagent.indexOf('Messenger') != -1){
-                location.href = 'fb-messenger://share/?link='+encodeURIComponent(jurl + new Date().getTime());
+                location.href = 'fb-messenger://share/?link='+encodeURIComponent(msg+jurl);
             }else{
                 if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
-                    window.location.href = 'fb-messenger://share/?link='+encodeURIComponent(jurl+ new Date().getTime());
+                    window.location.href = 'fb-messenger://share/?link='+encodeURIComponent(msg+jurl);
                     window.setTimeout(function() {
-                        window.location.href = 'whatsapp://send?text=' + jurl + new Date().getTime();
-                        window.location.href = 'whatsapp://send?text=' + jurl + new Date().getTime();
+                        window.location.href = 'whatsapp://send?text='+msg+jurl);
+                        window.location.href = 'whatsapp://send?text='+msg+jurl);
                     }, 1000);
                 }else{
-                    location.href = 'whatsapp://send?text=' + jurl + new Date().getTime();
-                    location.href = 'fb-messenger://share/?link='+encodeURIComponent(jurl + new Date().getTime());
+                    location.href = 'whatsapp://send?text=' +msg+ jurl;
+                    location.href = 'fb-messenger://share/?link='+encodeURIComponent(msg+ jurl);
                 }
             }
         
